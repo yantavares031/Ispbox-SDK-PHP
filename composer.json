@@ -1,0 +1,24 @@
+{
+    "name": "ispbox2/sdk",
+    "description": "SDK para acessar recursos da API Duobox",
+    "type": "liberary",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Yan Tavares",
+            "email": "yantavares021@hotmail.com"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ispbox2\\": [
+                "Ispbox2/src/",
+                "Ispbox2/src/Configs/",
+                "Ispbox2/src/Http/"
+            ] 
+        }
+    }
+}
