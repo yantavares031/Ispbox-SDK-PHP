@@ -15,9 +15,14 @@
     "autoload": {
         "psr-4": {
             "Ispbox2\\": [
-                "Ispbox2/src/",
-                "Ispbox2/src/Configs/",
-                "Ispbox2/src/Http/"
+                "src/",
+                "src/Configs/",
+                "src/Http/",
+                "src/Entity/",
+                "src/Entity/Cliente",
+                "src/Entity/Financeiro",
+                "src/Enums/",
+                "src/Classes/"
             ] 
         }
     }

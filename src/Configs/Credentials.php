@@ -1,5 +1,5 @@
 <?php 
-namespace Ispbox2;
+namespace Ispbox2\Configs;
 
 class Credentials
 {
@@ -22,6 +22,6 @@ class Credentials
     }
 
     function toAuthString() {
-        return base64_encode('basic '.$this->getUser().':'.$this->getPassword());
+        return base64_encode($this->getUser().':'.$this->getPassword());
     }
 }
