@@ -2,6 +2,8 @@
 namespace Ispbox2;
 
 use Exception;
+use Ispbox2\Configs\Credentials;
+use Ispbox2\Http\RestClient;
 
 class TestConnection
 {
@@ -18,6 +20,21 @@ class TestConnection
         }finally{
             return $retorno;
         }
+    }
+
+    public static function ValidateAuth(string $BaseUrl, Credentials $credenciais) : bool {
+        $retorno = false;
+
+        $Rest = new RestClient($BaseUrl);
+        $result = $Rest->Post('/usuarios/login',[
+            "login"       => $credenciais->getUser(),
+            "senha"       => $credenciais->getPassword(),
+            "cmdweblogin" => "Acessar"
+        ]);
+        if($result->erro == 0)
+            $retorno = true;
+
+        return $retorno;
     }
 }
 

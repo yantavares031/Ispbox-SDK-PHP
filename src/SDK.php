@@ -1,27 +1,30 @@
 <?php
 namespace Ispbox2;
+
+use Exception;
 use Ispbox2\Configs\Credentials;
 use Ispbox2\TestConnection;
 
 class SDK
 {
-    public static Credentials $credentials;
+    public static Credentials $payload;
     public static string $Host;
     
-    public static function setCredentials( string $user, string $pass ){
-        self::$credentials = new Credentials( $user, $pass );
-    }
+    public static function Configure(string $url, string $user, string $pass){
 
-    public static function setHost($url){
-        self::$Host = $url;
+        if(TestConnection::ValidateUrl($url))
+        {
+            if(TestConnection::ValidateAuth($url, new Credentials($user,$pass))){
+                self::$Host        = $url;
+                self::$payload     = new Credentials( $user, $pass );
+            }else{
+                throw new Exception("Falha na autenticação, verifique o usuário e senha informados");
+            }
+        }
     }
-
-    public static function testServer() : bool {
-       return TestConnection::ValidateUrl(self::$Host); 
-    }
-
+    
     public static function AuthString() : string{
-        return 'Basic '.self::$credentials->toAuthString();
+        return 'Basic '.self::$payload->toAuthString();
     }
 
 }

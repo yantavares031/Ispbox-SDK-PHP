@@ -1,0 +1,10 @@
+pl_ativo {
+	"1": "Serviço ativado"
+	"4": "Aguardando Ativação"
+}
+
+pl_status{
+	"1": "Liberado"
+	"0": "Bloquado"
+	"3": "Susp. Parcial"
+}

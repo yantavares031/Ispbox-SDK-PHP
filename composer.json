@@ -16,13 +16,15 @@
         "psr-4": {
             "Ispbox2\\": [
                 "src/",
+                "src/classes/",
+                "src/classes/Abstracts",
                 "src/Configs/",
-                "src/Http/",
                 "src/Entity/",
-                "src/Entity/Cliente",
-                "src/Entity/Financeiro",
+                "src/Entity/Cliente/",
+                "src/Entity/Financeiro/",
                 "src/Enums/",
-                "src/Classes/"
+                "src/Http/",
+                "src/Operation/"
             ] 
         }
     }

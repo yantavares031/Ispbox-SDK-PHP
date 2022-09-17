@@ -25,8 +25,8 @@ class TreatedURL
     }
 
     private function ValidatePrefix() : void {
-        $this->is_ssl       = (str_contains("https://", $this->domain)) ? true : false;
-        $this->http_prefix  = ($this->is_ssl) ? "https://" : "http://";
+        $this->is_ssl       = (str_contains($this->domain, "https://")) ? true : false;
+        $this->http_prefix  = ($this->is_ssl) ? "https://" : "http://"; 
     }
 
     private function MakeURL() : void {
