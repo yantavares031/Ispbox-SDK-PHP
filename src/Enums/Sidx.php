@@ -1,7 +1,7 @@
 <?php
 namespace Ispbox2\Enums;
 
-enum ClientSidx : string{
+enum Sidx : string{
     case ID       = 'id';
     case CPF      = 'cpf';
     case CNPJ     = 'cnpj';

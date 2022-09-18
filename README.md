@@ -28,12 +28,14 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 ```php
   <?php
     require_once("vendor/autoload.php");
-    use Ispbox2\Enums\ClientSidx;
+    use Ispbox2\Enums\Sidx;
+    use Ispbox2\Clientes;
+    use Ispbox2\Contratos;
 
     Ispbox2\SDK::Configure('https://demo2.ispbox.com.br','demo','demo');
 
-    $cliente   = Ispbox2\Clientes::findOne(ClientSidx::ID, '1');
-    $contratos = new Ispbox2\Contratos($cliente);
+    $cliente   = Clientes::findOne(Sidx::ID, '1');
+    $contratos = new Contratos($cliente);
 
     echo $cliente->nome;
   ?>

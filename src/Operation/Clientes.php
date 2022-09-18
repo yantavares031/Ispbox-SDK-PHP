@@ -4,15 +4,14 @@ namespace Ispbox2;
 use Exception;
 use Ispbox2\Http\RestClient;
 USE Ispbox2\Classes\Abstracts\Cliente;
-use Ispbox2\Classes\Abstracts\Contrato;
 use Ispbox2\Classes\Json;
-use Ispbox2\Enums\ClientSidx;
+use Ispbox2\Enums\Sidx;
 use stdClass;
 
 class Clientes{
-    public static function findOne(ClientSidx $sidx, $value) : Cliente{
+    public static function findOne(Sidx $sidx, $value) : Cliente{
 
-        if($sidx != ClientSidx::ID and $sidx != ClientSidx::CNPJ and $sidx != ClientSidx::CPF)
+        if($sidx != Sidx::ID and $sidx != Sidx::CNPJ and $sidx != Sidx::CPF)
             throw new Exception("Formato de Sidx não permitido para este método",);
 
         $Rest = new RestClient(SDK::$Host);
