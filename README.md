@@ -19,34 +19,23 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 2. No diretório do seu projeto, execute em linha de comando
 `composer require ispbox2/sdk` para PHP 7.4 ou superior.
 
-3. Copy the access_token in the [credentials](https://www.mercadopago.com/mlb/account/credentials) section of the page and replace YOUR_ACCESS_TOKEN with it.
+É isso! O SDK do Ispbox2 foi instalado com sucesso.
 
-That's it! Mercado Pago SDK has been successfully installed.
-
-## 🌟 Getting Started
+## 🌟 Codando
   
-  Simple usage looks like:
+  O uso simples se parece com:
   
 ```php
   <?php
-    require_once 'vendor/autoload.php'; // You have to require the library from your Composer vendor folder
+    require_once("vendor/autoload.php");
+    use Ispbox2\Enums\ClientSidx;
 
-    MercadoPago\SDK::setAccessToken("YOUR_ACCESS_TOKEN"); // Either Production or SandBox AccessToken
+    Ispbox2\SDK::Configure('https://demo2.ispbox.com.br','demo','demo');
 
-    $payment = new MercadoPago\Payment();
-    
-    $payment->transaction_amount = 141;
-    $payment->token = "YOUR_CARD_TOKEN";
-    $payment->description = "Ergonomic Silk Shirt";
-    $payment->installments = 1;
-    $payment->payment_method_id = "visa";
-    $payment->payer = array(
-      "email" => "larue.nienow@email.com"
-    );
+    $cliente   = Ispbox2\Clientes::findOne(ClientSidx::ID, '1');
+    $contratos = new Ispbox2\Contratos($cliente);
 
-    $payment->save();
-
-    echo $payment->status;
+    echo $cliente->nome;
   ?>
 ```
 
