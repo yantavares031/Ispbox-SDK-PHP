@@ -1,24 +1,23 @@
 # Ispbox2 SDK / PHP
 
-[![Version](http://poser.pugx.org/ispbox2/sdk/version)](https://packagist.org/packages/ispbox2/sdk)
 [![Latest Stable Version](http://poser.pugx.org/ispbox2/sdk/v)](https://packagist.org/packages/ispbox2/sdk)
 [![Total Downloads](http://poser.pugx.org/ispbox2/sdk/downloads)](https://packagist.org/packages/ispbox2/sdk)
 [![Latest Unstable Version](http://poser.pugx.org/ispbox2/sdk/v/unstable)](https://packagist.org/packages/ispbox2/sdk)
 
-Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração ao seu servidor Ispbox
+Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração aos recursos da API do Ispbox
 
 ## 💡 Requisitos
 
-PHP 7.4 ou superior
+- PHP 7.4 ou superior
+- URL ou IP do sistema (ex: https://demo2.ispbox.com.br)
+- Usuário de acesso do sistema
 
-## 💻 Installation 
+## 💻 Instalação 
 
-First time using Mercado Pago? Create your [Mercado Pago account](https://www.mercadopago.com), if you don’t have one already.
+1. Realize o download do [Composer](https://getcomposer.org/doc/00-intro.md) caso não tenha instalado.
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) if not already installed
-
-2. On your project directory run on the command line
-`composer require "mercadopago/dx-php:2.5.0"` for PHP7 or `composer require "mercadopago/dx-php:1.12.5"` for PHP5.6.
+2. No diretório do seu projeto, execute em linha de comando
+`composer require ispbox2/sdk` para PHP 7.4 ou superior.
 
 3. Copy the access_token in the [credentials](https://www.mercadopago.com/mlb/account/credentials) section of the page and replace YOUR_ACCESS_TOKEN with it.
 
