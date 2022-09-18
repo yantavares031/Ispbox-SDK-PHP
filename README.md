@@ -41,22 +41,8 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
   ?>
 ```
 
-## 📚 Documentation 
-
-Visit our Dev Site for further information regarding:
- - Payments APIs: [Spanish](https://www.mercadopago.com.ar/developers/es/guides/payments/api/introduction/) / [Portuguese](https://www.mercadopago.com.br/developers/pt/guides/payments/api/introduction/)
- - Mercado Pago checkout: [Spanish](https://www.mercadopago.com.ar/developers/es/guides/payments/web-payment-checkout/introduction/) / [Portuguese](https://www.mercadopago.com.br/developers/pt/guides/payments/web-payment-checkout/introduction/)
- - Web Tokenize checkout: [Spanish](https://www.mercadopago.com.ar/developers/es/guides/payments/web-tokenize-checkout/introduction/) / [Portuguese](https://www.mercadopago.com.br/developers/pt/guides/payments/web-tokenize-checkout/introduction/)
-
-Check [our official code reference](https://www.mercadopago.com.br/developers/pt/docs/sdks-library/server-side) to explore all available functionalities.
+## 📚 Projeto em Desenvolvimento 
 
 ## ❤️ Support 
 
-If you require technical support, please contact our support team at [developers.mercadopago.com](https://developers.mercadopago.com)
-
 ## 🏻 License 
-
-```
-MIT license. Copyright (c) 2018 - Mercado Pago / Mercado Libre 
-For more information, see the LICENSE file.
-```
