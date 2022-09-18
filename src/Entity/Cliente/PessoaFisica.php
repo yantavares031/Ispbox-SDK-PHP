@@ -12,7 +12,8 @@ class PessoaFisica extends Cliente{
     public string $nomeMae;
     public string $profissao;
     public string $tipoPessoa = "Fisica";
-    public EstadoCivil $estadoCivil;
+    public string $estadoCivil;
+    public EstadoCivil $estadoCivilEnum;
 
     public function __construct() {
         parent::__construct();
@@ -28,7 +29,7 @@ class PessoaFisica extends Cliente{
         $this->cpf            = $stdobj->cpf;
         $this->sexo           = $stdobj->sexo;
         $this->dataNascimento = $parseDate($stdobj->data_nascimento);
-        $this->estadoCivil    = EstadoCivil::from($stdobj->estado_civil);
+        $this->estadoCivil    = EstadoCivil::from($stdobj->estado_civil)->name;
         $this->nomePai        = $stdobj->nome_pai;
         $this->nomeMae        = $stdobj->nome_mae;
         $this->profissao      = $stdobj->profissao;

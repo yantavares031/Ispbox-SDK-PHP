@@ -7,7 +7,7 @@ use stdClass;
 
 abstract class Cliente{
     
-    public string   $id;
+    public int      $id;
     public string   $nome;
     public string   $dataCadastro;
     public string   $email;
