@@ -17,7 +17,7 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 1. Realize o download do [Composer](https://getcomposer.org/doc/00-intro.md) caso não tenha instalado.
 
 2. No diretório do seu projeto, execute em linha de comando
-`composer require ispbox2/sdk` para PHP 7.4 ou superior.
+`composer require ispbox2/sdk:dev-master` para PHP 7.4 ou superior.
 
 É isso! O SDK do Ispbox2 foi instalado com sucesso.
 
