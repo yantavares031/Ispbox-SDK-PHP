@@ -4,8 +4,10 @@ namespace Ispbox2;
 use Exception;
 use Ispbox2\Http\RestClient;
 USE Ispbox2\Classes\Abstracts\Cliente;
+use Ispbox2\Classes\Abstracts\Contrato;
 use Ispbox2\Classes\Json;
 use Ispbox2\Enums\ClientSidx;
+use stdClass;
 
 class Clientes{
     public static function findOne(ClientSidx $sidx, $value) : Cliente{
@@ -27,27 +29,22 @@ class Clientes{
         ]);
 
         if($response->count == 0)
-            return new Cliente();
+            return new PessoaNullable();
 
         $tipoPessoa = $response->registros[0]->tipo_pessoa;
-        switch($tipoPessoa){
-            case "F":
-                $r = new PessoaFisica();
-                $r->fromObject($response->registros[0]);
-                foreach($response->registros as $reg)
-                    ($r->id == $reg->id) ? $r->addContrato($reg->pl_id) : '';
-                
-                return $r;
-            break;
+        $pessoa     = ($tipoPessoa == "F") ? new PessoaFisica() : new PessoaJuridica();
+        $pessoa->fromObject($response->registros[0]);
+        self::inserirContratos($pessoa, $response);
+        
+        return $pessoa;
+    }
 
-            case "J":
-                $r = new PessoaJuridica();
-                $r->fromObject($response->registros[0]);
-                foreach($response->registros as $reg)
-                    ($r->id == $reg->id) ? $r->addContrato($reg->pl_id) : '';
-                
-                return $r;
-            break;
+    private static function  inserirContratos(Cliente &$cliente, Json $regs){
+        foreach($regs->registros as $reg){
+            $tipoContrato = $reg->tipo_servico; 
+            $contrato     = ($reg->tipo_servico == "INTERNET") ? new InternetService() : new TelefoniaService();
+            $contrato->fromObject($reg);
+            ($cliente->id == $reg->id) ? $cliente->addContrato($contrato) : '';
         }
     }
-}
+}   

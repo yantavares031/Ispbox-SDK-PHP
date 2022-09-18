@@ -11,15 +11,11 @@ class SDK
     public static string $Host;
     
     public static function Configure(string $url, string $user, string $pass){
-
-        if(TestConnection::ValidateUrl($url))
-        {
-            if(TestConnection::ValidateAuth($url, new Credentials($user,$pass))){
-                self::$Host        = $url;
-                self::$payload     = new Credentials( $user, $pass );
-            }else{
-                throw new Exception("Falha na autenticação, verifique o usuário e senha informados");
-            }
+        if(TestConnection::ValidateAuth($url, new Credentials($user,$pass))){
+            self::$Host        = $url;
+            self::$payload     = new Credentials( $user, $pass );
+        }else{
+            throw new Exception("Falha na autenticação, verifique o usuário e senha informados");
         }
     }
     

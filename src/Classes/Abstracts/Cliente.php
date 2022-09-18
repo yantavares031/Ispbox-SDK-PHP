@@ -5,7 +5,7 @@ use Ispbox2\Classes\Json;
 use Ispbox2\Enums\ContratoStatus;
 use stdClass;
 
-class Cliente{
+abstract class Cliente{
     
     public string   $id;
     public string   $nome;
@@ -20,8 +20,8 @@ class Cliente{
         $this->endereco = new Endereco();
     }
 
-    function addContrato($contratoId){
-        array_push($this->contratos, $contratoId);
+    function addContrato(Contrato $contrato){
+        array_push($this->contratos, $contrato);
     }
 
     function fromObject($stdobj){
@@ -41,7 +41,4 @@ class Cliente{
         $this->endereco->complemento = $stdobj->endereco_complemento;
         $this->endereco->cep         = $stdobj->cep;
     }
-
-
-
 }

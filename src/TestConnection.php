@@ -9,14 +9,9 @@ class TestConnection
 {
     public static function ValidateUrl(string $erp_url) : bool {
         $retorno = false;
-
         try{
-            $header_check  = get_headers($erp_url);
-            $response_code = $header_check[0];
-            
-            if($response_code == "HTTP/1.1 302 Found")
-                $retorno = true;
-                
+            file_get_contents($erp_url);
+            $retorno = true;
         }finally{
             return $retorno;
         }
@@ -24,7 +19,6 @@ class TestConnection
 
     public static function ValidateAuth(string $BaseUrl, Credentials $credenciais) : bool {
         $retorno = false;
-
         $Rest = new RestClient($BaseUrl);
         $result = $Rest->Post('/usuarios/login',[
             "login"       => $credenciais->getUser(),

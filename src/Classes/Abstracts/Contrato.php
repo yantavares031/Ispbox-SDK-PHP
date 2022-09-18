@@ -2,8 +2,9 @@
 namespace Ispbox2\Classes\Abstracts;
 
 use Ispbox2\Enums\ContratoStatus;
+use Ispbox2\Vars;
 
-class Contrato{
+abstract class Contrato{
     public string  $id;
     public string  $clienteId;
     public string  $plano;
