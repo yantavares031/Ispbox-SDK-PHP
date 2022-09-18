@@ -1,14 +1,14 @@
 # Ispbox2 SDK / PHP
 
 [![Latest Stable Version](https://poser.pugx.org/mercadopago/dx-php/v/stable)](https://packagist.org/packages/mercadopago/dx-php)
-[![Total Downloads](https://poser.pugx.org/mercadopago/dx-php/downloads)](https://packagist.org/packages/mercadopago/dx-php)
-[![License](https://poser.pugx.org/mercadopago/dx-php/license)](https://packagist.org/packages/mercadopago/dx-php)
+<!-- [![Total Downloads](https://poser.pugx.org/mercadopago/dx-php/downloads)](https://packagist.org/packages/mercadopago/dx-php)
+[![License](https://poser.pugx.org/mercadopago/dx-php/license)](https://packagist.org/packages/mercadopago/dx-php) -->
 
-This library provides developers with a simple set of bindings to help you integrate Mercado Pago API to a website and start receiving payments.
+Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração ao seu servidor Ispbox
 
-## 💡 Requirements
+## 💡 Requisitos
 
-PHP 5.6, 7.1 or higher
+PHP 7.4 ou superior
 
 ## 💻 Installation 
 
