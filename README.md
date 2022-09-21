@@ -25,7 +25,7 @@ $ composer require ispbox2/sdk:dev-master
 
 ## 🌟 Codando
   
-  ### ℹ️ Configurando SDK
+  ### ✅ Configurando SDK
   
 ```php
   <?php
@@ -35,13 +35,13 @@ $ composer require ispbox2/sdk:dev-master
     
   ?>
 ```
-| Parametro | Tipo | Obritoriedade | Descrição | Exemplo
+| Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
 |---|---|---|---|---|
 | `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo2.ispbox.com.br` |
 | `USER` | string | obrigatório | Login de conta ispbox | `demo` |
 | `PASS` | string | obrigatório | Senha de conta Ispbox | `demo` |
 
-> **Note** Este método internamente faz um teste de conexão validando a `URL` e as `credenciais`.
+> **Nota::** O método `Configure`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
 > Caso não obtenha êxito no teste, é lançado uma exceção.
 
 ##  Projeto em Desenvolvimento 
