@@ -52,11 +52,11 @@ $ composer require ispbox2/sdk:dev-master
       Ispbox2\SDK::Configure('https://demo2.ispbox.com.br','demo','demo');
 
       $cliente = Clientes::findOne(Sidx::CPF, 61200456067);
-      if($cliente->exists){
+      if($cliente->exists)
           echo $Cliente->nome;
-      }else{
+      else
         //Mensagem / Notificação / Ação
-      }
+      
       
     ?>
   ```
