@@ -1,7 +1,6 @@
 # Ispbox2 SDK / PHP
 
 [![Latest Stable Version](http://poser.pugx.org/ispbox2/sdk/v)](https://packagist.org/packages/ispbox2/sdk)
-[![Total Downloads](http://poser.pugx.org/ispbox2/sdk/downloads)](https://packagist.org/packages/ispbox2/sdk)
 [![Latest Unstable Version](http://poser.pugx.org/ispbox2/sdk/v/unstable)](https://packagist.org/packages/ispbox2/sdk)
 
 Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração aos recursos da API do Ispbox
@@ -56,8 +55,6 @@ $ composer require ispbox2/sdk:dev-master
           echo $Cliente->nome;
       else
         //Mensagem / Notificação / Ação
-      
-      
     ?>
   ```
   ### Método `findOne()`
