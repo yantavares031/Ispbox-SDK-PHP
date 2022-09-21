@@ -42,7 +42,7 @@ $ composer require ispbox2/sdk:dev-master
   > **Note** O método `Configure()`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
   > Caso não obtenha êxito no teste, é lançado uma exceção.
 
-  ### 🔎 Busca de Cliente
+  ## 🔎 Busca de Cliente
   ```php
     <?php
       require_once("vendor/autoload.php");
@@ -60,14 +60,31 @@ $ composer require ispbox2/sdk:dev-master
       
     ?>
   ```
-  | Função findOne() | | | | |
+  ### `findOne()`
+  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
   |---|---|---|---|---|
-  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
   | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida | `1` |
 
   > **Note** O método `findOne()`  retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
+
+  ### Principais propriedades do objeto `Cliente`
+  
+  | Propriedade | Tipo  | Descrição |
+  |---|---|---|
+  | `id` | string | ID referente ao cadastro do cliente no sistema |
+  | `nome` | string | retorna nome completo do cliente |
+  | `id` | string | ID referente ao cadastro do cliente no sistema |
+  | `nome` | string | retorna nome completo do cliente |
+  | `id` | string | ID referente ao cadastro do cliente no sistema |
+  | `nome` | string | retorna nome completo do cliente |
+  | `id` | string | ID referente ao cadastro do cliente no sistema |
+  | `nome` | string | retorna nome completo do cliente |
+  | `id` | string | ID referente ao cadastro do cliente no sistema |
+  | `nome` | string | retorna nome completo do cliente |
+
+
 
 ##  Projeto em Desenvolvimento 
 
