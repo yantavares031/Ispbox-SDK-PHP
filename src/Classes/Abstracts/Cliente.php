@@ -12,6 +12,8 @@ abstract class Cliente{
     public string   $dataCadastro;
     public string   $email;
     public string   $emailSecundario;
+    public string   $telefone;
+    public string   $celular;
     public array    $contratos = [];
     public Endereco $endereco;
     public bool     $exists = false;
@@ -31,6 +33,8 @@ abstract class Cliente{
         $this->id                    = $stdobj->id;
         $this->nome                  = $stdobj->nome;
         $this->dataCadastro          = $parseDate($stdobj->data_cadastro);
+        $this->telefone              = $stdobj->telefone;
+        $this->celular               = $stdobj->celular;
         $this->email                 = $stdobj->email;
         $this->emailSecundario       = $stdobj->email2;
         $this->endereco->logradouro  = $stdobj->endereco;

@@ -5,8 +5,7 @@ use Exception;
 use Ispbox2\Http\RestClient;
 USE Ispbox2\Classes\Abstracts\Cliente;
 use Ispbox2\Classes\Json;
-use Ispbox2\Enums\Sidx;
-use stdClass;
+use Ispbox2\Enums\Clientes\Sidx;
 
 class Clientes{
     public static function findOne(Sidx $sidx, $value) : Cliente{

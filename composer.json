@@ -21,7 +21,11 @@
                 "src/Configs/",
                 "src/Entity/",
                 "src/Entity/Cliente/",
+                "src/Entity/Contrato/",
                 "src/Entity/Financeiro/",
+                "src/Enums/clientes",
+                "src/Enums/contratos",
+                "src/Enums/financeiro",
                 "src/Enums/",
                 "src/Http/",
                 "src/Operation/"

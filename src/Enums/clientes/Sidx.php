@@ -1,5 +1,5 @@
 <?php
-namespace Ispbox2\Enums;
+namespace Ispbox2\Enums\Clientes;
 
 enum Sidx : string{
     case ID       = 'id';

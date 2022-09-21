@@ -1,8 +1,6 @@
 <?php 
 namespace Ispbox2\Classes\Abstracts;
-
-use Ispbox2\Contratos;
-use Ispbox2\Enums\ContratoStatus;
+use Ispbox2\Enums\Contratos\Status;
 use Ispbox2\Vars;
 
 abstract class Contrato{
@@ -13,7 +11,8 @@ abstract class Contrato{
     public string  $dataInstalacao;
     public string  $planoStatus;
     public bool    $active;
-    public ContratoStatus $planoStatusEnum; 
+    public Status  $planoStatusEnum; 
+    public bool    $exists = false;
 
     public function __construct(){
 
@@ -21,7 +20,7 @@ abstract class Contrato{
 
     public function fromObject($stdobj){
         $parseDate   = fn($date) => date('d/m/Y',strtotime($date));
-        $parseStatus = ContratoStatus::from($stdobj->pl_status);
+        $parseStatus = Status::from($stdobj->pl_status);
 
         $this->id              = $stdobj->pl_id;
         $this->clienteId       = $stdobj->cli_id;
@@ -32,5 +31,6 @@ abstract class Contrato{
         $this->planoStatus     = $parseStatus->name;
         $this->planoStatusEnum = $parseStatus;
         $this->active          = ($stdobj->pl_ativo == "1") ? true : false;
+        $exists                = true;
     }
 }

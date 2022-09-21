@@ -5,6 +5,7 @@ use Exception;
 use Ispbox2\Classes\Json;
 use Ispbox2\Configs\Credentials;
 use Ispbox2\SDK;
+use Ispbox2\Vars;
 
 class RestClient{
 
@@ -37,7 +38,7 @@ class RestClient{
         curl_setopt_array($ch, CurlStruct::data("POST", $rota, $header, $data));
         $response = curl_exec($ch);
         curl_close($ch);
-       
+        
         $json = new Json($response);
         return ($json->isJson()) ? $json : throw new Exception("A saída não é um JSON válido");
 
