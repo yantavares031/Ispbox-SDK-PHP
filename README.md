@@ -34,9 +34,9 @@ $ composer require ispbox2/sdk:dev-master
   ```
   | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
   |---|---|---|---|---|
-  | `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo2.ispbox.com.br` |
-  | `USER` | string | obrigatório | Login de conta ispbox | `demo` |
-  | `PASS` | string | obrigatório | Senha de conta Ispbox | `demo` |
+  | `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo.ispbox.com.br` |
+  | `USER` | string | obrigatório | Login de conta ispbox | `admin` |
+  | `PASS` | string | obrigatório | Senha de conta Ispbox | `password` |
 
   > **Note** O método `Configure()`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
   > Caso não obtenha êxito no teste, é lançado uma exceção.
@@ -48,7 +48,7 @@ $ composer require ispbox2/sdk:dev-master
       use Ispbox2\Clientes;
       use Ispbox2\Enums\Clientes\Sidx;
 
-      Ispbox2\SDK::Configure('https://demo2.ispbox.com.br','demo','demo');
+      Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
 
       $cliente = Clientes::findOne(Sidx::CPF, 61200456067);
       if($cliente->exists)
