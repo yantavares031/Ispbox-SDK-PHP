@@ -46,3 +46,7 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 ## ❤️ Support 
 
 ## 🏻 License 
+```
+Apache License 2.0
+Para mais informações, veja o arquivo de LICENÇA.
+```
