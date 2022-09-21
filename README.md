@@ -29,10 +29,9 @@ $ composer require ispbox2/sdk:dev-master
   
 ```php
   <?php
-  
     require_once("vendor/autoload.php");
-    Ispbox2\SDK::Configure(URL, USER, PASS);
     
+    Ispbox2\SDK::Configure(URL, USER, PASS);
   ?>
 ```
 | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
