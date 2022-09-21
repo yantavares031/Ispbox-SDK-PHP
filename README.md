@@ -41,7 +41,7 @@ $ composer require ispbox2/sdk:dev-master
 | `USER` | string | obrigatório | Login de conta ispbox | `demo` |
 | `PASS` | string | obrigatório | Senha de conta Ispbox | `demo` |
 
-> **Nota::** O método `Configure`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
+> **Nota** O método `Configure`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
 > Caso não obtenha êxito no teste, é lançado uma exceção.
 
 ##  Projeto em Desenvolvimento 
