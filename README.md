@@ -21,11 +21,11 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 $ composer require ispbox2/sdk:dev-master
 ```
 
-É isso! O SDK do Ispbox2 foi instalado com sucesso.
+✅ É isso! O SDK do Ispbox2 foi instalado com sucesso.
 
 ## 🌟 Codando
   
-  ### ✅ Configurando SDK
+  ### ⚙️ Configurando SDK
   
 ```php
   <?php
