@@ -26,22 +26,47 @@ $ composer require ispbox2/sdk:dev-master
 ## 🌟 Codando
   
   ### ⚙️ Configurando SDK
-  
-```php
-  <?php
-    require_once("vendor/autoload.php");
-    
-    Ispbox2\SDK::Configure(URL, USER, PASS);
-  ?>
-```
-| Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
-|---|---|---|---|---|
-| `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo2.ispbox.com.br` |
-| `USER` | string | obrigatório | Login de conta ispbox | `demo` |
-| `PASS` | string | obrigatório | Senha de conta Ispbox | `demo` |
+  ```php
+    <?php
+      require_once("vendor/autoload.php");
+      
+      Ispbox2\SDK::Configure(URL, USER, PASS);
+    ?>
+  ```
+  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
+  |---|---|---|---|---|
+  | `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo2.ispbox.com.br` |
+  | `USER` | string | obrigatório | Login de conta ispbox | `demo` |
+  | `PASS` | string | obrigatório | Senha de conta Ispbox | `demo` |
 
-> **Note** O método `Configure`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
-> Caso não obtenha êxito no teste, é lançado uma exceção.
+  > **Note** O método `Configure()`  internamente faz um teste de conexão validando a `URL` e as `credenciais`.
+  > Caso não obtenha êxito no teste, é lançado uma exceção.
+
+  ### 🔎 Busca de Cliente
+  ```php
+    <?php
+      require_once("vendor/autoload.php");
+      use Ispbox2\Clientes;
+      use Ispbox2\Enums\Clientes\Sidx;
+
+      Ispbox2\SDK::Configure('https://demo2.ispbox.com.br','demo','demo');
+
+      $cliente = Clientes::findOne(Sidx::CPF, 61200456067);
+      if($cliente->exists){
+          echo $Cliente->nome;
+      }else{
+        //Mensagem / Notificação / Ação
+      }
+      
+    ?>
+  ```
+  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
+  |---|---|---|---|---|
+  | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
+  | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida | `1` |
+
+  > **Note** O método `findOne()`  retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
+  > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
 
 ##  Projeto em Desenvolvimento 
 
