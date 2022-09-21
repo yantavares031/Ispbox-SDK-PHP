@@ -17,31 +17,34 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 1. Realize o download do [Composer](https://getcomposer.org/doc/00-intro.md) caso não tenha instalado.
 
 2. No diretório do seu projeto, execute em linha de comando
-`composer require ispbox2/sdk:dev-master` para PHP 7.4 ou superior.
+```
+$ composer require ispbox2/sdk:dev-master
+```
 
 É isso! O SDK do Ispbox2 foi instalado com sucesso.
 
 ## 🌟 Codando
   
-  O uso simples se parece com:
+  ### ℹ️ Configurando SDK
   
 ```php
   <?php
     require_once("vendor/autoload.php");
-    use Ispbox2\Enums\Sidx;
-    use Ispbox2\Clientes;
-    use Ispbox2\Contratos;
 
-    Ispbox2\SDK::Configure('https://demo2.ispbox.com.br','demo','demo');
-
-    $cliente   = Clientes::findOne(Sidx::ID, '1');
-    $contratos = new Contratos($cliente);
-
-    echo $cliente->nome;
+    Ispbox2\SDK::Configure(URL, USER, PASS);
+    
   ?>
 ```
+| Parametro | Tipo | Obritoriedade | Descrição | Exemplo
+|---|---|---|---|---|
+| `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo2.ispbox.com.br` |
+| `USER` | string | obrigatório | Login de conta ispbox | `demo` |
+| `PASS` | string | obrigatório | Senha de conta Ispbox | `demo` |
 
-## 📚 Projeto em Desenvolvimento 
+> **Note** Este método internamente faz um teste de conexão validando a `URL` e as `credenciais`.
+> Caso não obtenha êxito no teste, é lançado uma exceção.
+
+##  Projeto em Desenvolvimento 
 
 ## ❤️ Support 
 
