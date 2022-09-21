@@ -60,7 +60,7 @@ $ composer require ispbox2/sdk:dev-master
       
     ?>
   ```
-  ### `findOne()`
+  ### Método `findOne()`
   | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
   |---|---|---|---|---|
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
@@ -75,16 +75,13 @@ $ composer require ispbox2/sdk:dev-master
   |---|---|---|
   | `id` | string | ID referente ao cadastro do cliente no sistema |
   | `nome` | string | retorna nome completo do cliente |
-  | `id` | string | ID referente ao cadastro do cliente no sistema |
-  | `nome` | string | retorna nome completo do cliente |
-  | `id` | string | ID referente ao cadastro do cliente no sistema |
-  | `nome` | string | retorna nome completo do cliente |
-  | `id` | string | ID referente ao cadastro do cliente no sistema |
-  | `nome` | string | retorna nome completo do cliente |
-  | `id` | string | ID referente ao cadastro do cliente no sistema |
-  | `nome` | string | retorna nome completo do cliente |
-
-
+  | `dataCadastro` | string | ID referente ao cadastro do cliente no sistema |
+  | `telefone` | string | retorna nome completo do cliente |
+  | `celular` | string | ID referente ao cadastro do cliente no sistema |
+  | `email` | string | retorna nome completo do cliente |
+  | `emailSecundario` | string | ID referente ao cadastro do cliente no sistema |
+  | `exists` | bool | retorna se o cadastro existe ou não |
+  | `Endereco` | object | Contém todos os dados de endereço do cadastro como, `logradouro`, `numero`, `bairro`, `cep`  e etc...|
 
 ##  Projeto em Desenvolvimento 
 
