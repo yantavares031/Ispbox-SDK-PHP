@@ -52,7 +52,7 @@ $ composer require ispbox2/sdk:dev-master
 
       $cliente = Clientes::findOne(Sidx::CPF, 61200456067);
       if($cliente->exists)
-          echo $Cliente->nome;
+          echo $cliente->nome;
       else
         //Mensagem / Notificação / Ação
     ?>

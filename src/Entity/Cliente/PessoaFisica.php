@@ -26,15 +26,16 @@ class PessoaFisica extends Cliente{
         $firstName = fn($nomeCompleto) => explode(" ", $nomeCompleto)[0];
         $parseDate = fn($date)         => date('d/m/Y',strtotime($date));
         
-        $this->primeiroNome   = $firstName($stdobj->nome);
-        $this->cpf            = $stdobj->cpf;
-        $this->rg             = $stdobj->rg;
-        $this->sexo           = $stdobj->sexo;
-        $this->dataNascimento = $parseDate($stdobj->data_nascimento);
-        $this->estadoCivil    = EstadoCivil::from($stdobj->estado_civil)->name;
-        $this->nomePai        = $stdobj->nome_pai;
-        $this->nomeMae        = $stdobj->nome_mae;
-        $this->profissao      = $stdobj->profissao;
+        $this->primeiroNome    = $firstName($stdobj->nome);
+        $this->cpf             = $stdobj->cpf;
+        $this->rg              = $stdobj->rg;
+        $this->sexo            = $stdobj->sexo;
+        $this->dataNascimento  = $parseDate($stdobj->data_nascimento);
+        $this->estadoCivil     = EstadoCivil::from($stdobj->estado_civil)->name;
+        $this->estadoCivilEnum = EstadoCivil::from($stdobj->estado_civil);
+        $this->nomePai         = $stdobj->nome_pai;
+        $this->nomeMae         = $stdobj->nome_mae;
+        $this->profissao       = $stdobj->profissao;
         
     }
 }

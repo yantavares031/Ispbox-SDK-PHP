@@ -40,7 +40,7 @@ class Clientes{
     private static function  inserirContratos(Cliente &$cliente, Json $regs){
         foreach($regs->registros as $reg){
             $tipoContrato = $reg->tipo_servico; 
-            $contrato     = ($reg->tipo_servico == "INTERNET") ? new InternetService() : new TelefoniaService();
+            $contrato     = ($tipoContrato == "INTERNET") ? new InternetService() : new TelefoniaService();
             $contrato->fromObject($reg);
             ($cliente->id == $reg->id) ? $cliente->addContrato($contrato) : '';
         }
