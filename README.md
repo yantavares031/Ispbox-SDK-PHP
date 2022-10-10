@@ -67,6 +67,7 @@ $ composer require ispbox2/sdk:dev-master
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
 
   ### Principais propriedades do objeto `Cliente`
+  #### Em caso de `PessoaFisica` as propriedades são:
   
   | Propriedade | Tipo  | Descrição |
   |---|---|---|
@@ -79,6 +80,9 @@ $ composer require ispbox2/sdk:dev-master
   | `emailSecundario` | string | email secundario |
   | `exists` | bool | retorna se o cadastro existe ou não |
   | `Endereco` | object | Contém todos os dados de endereço do cadastro como, `logradouro`, `numero`, `bairro`, `cep`  e etc...|
+  | `nomePai` | string | retorna nome do Pai |
+  | `nomeMae` | string | retorna nome do Mãe |
+  
 
 ##  Projeto em Desenvolvimento 
 
