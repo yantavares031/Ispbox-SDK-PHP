@@ -3,7 +3,8 @@
 [![Latest Stable Version](http://poser.pugx.org/ispbox2/sdk/v)](https://packagist.org/packages/ispbox2/sdk)
 [![Latest Unstable Version](http://poser.pugx.org/ispbox2/sdk/v/unstable)](https://packagist.org/packages/ispbox2/sdk)
 
-Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração aos recursos da API do Ispbox
+Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração aos recursos da API do Ispbox.
+Lembrando que esta SDK foi desenvolvida utilzando como base a API `[ispbox-ajax-requests]https://github.com/duoboxbr/ispbox-ajax-requests` API
 
 ## 💡 Requisitos
 
@@ -15,7 +16,7 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 
 1. Realize o download do [Composer](https://getcomposer.org/doc/00-intro.md) caso não tenha instalado.
 
-2. No diretório do seu projeto, execute em linha de comando
+2. No diretório raiz do seu projeto, execute em linha de comando
 ```
 $ composer require ispbox2/sdk:dev-master
 ```
@@ -63,7 +64,7 @@ $ composer require ispbox2/sdk:dev-master
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
   | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida | `1` |
 
-  > **Note** O método `findOne()`  retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
+  > **Note** O método `findOne()` é um método de busca que retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
 
   ### Principais propriedades do objeto `Cliente`
