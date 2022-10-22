@@ -62,7 +62,7 @@ $ composer require ispbox2/sdk:dev-master
   | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
   |---|---|---|---|---|
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
-  | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida | `1` |
+  | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida |  |
 
   > **Note** O método `findOne()` é um método de busca que retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
@@ -103,7 +103,23 @@ $ composer require ispbox2/sdk:dev-master
   | `responsavel` | string | retorna nome da pessoa responsável / proprietario(a) da empresa |
   | `inscricaoEstadual` | string | retorna numeração da inscrição no estado |
   | `cnpj` | string | retorna a numerção do documento CNPJ |
-  
+
+  ## 📝 Busca de Contratos / Planos contratados
+  ```php
+    <?php
+      require_once("vendor/autoload.php");
+      use Ispbox2\Clientes;
+      use Ispbox2\Contratos;
+      use Ispbox2\Enums\Clientes\Sidx;
+
+      Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
+
+      $cliente   = Clientes::findOne(Sidx::CPF, '61200456067');
+      if(!$cliente->exists)
+            //Messagem de erro caso o cliente não seja valido
+
+      $contratos = new Contratos($cliente);
+  ```
 ##  Projeto em Desenvolvimento 
 
 ## ❤️ Support 
