@@ -64,7 +64,7 @@ $ composer require ispbox2/sdk:dev-master
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
   | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida |  |
 
-  > **Note** O método `findOne()` é um método de busca que retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
+  > **Note** O método `findOne()` é um método estático de busca que retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
 
   ### Principais propriedades do objeto `Cliente`
@@ -120,6 +120,24 @@ $ composer require ispbox2/sdk:dev-master
 
       $contratos = new Contratos($cliente);
   ```
+  > **Note** A Classe `Contratos` é um objeto de busca que retora contratos (sejam eles de TELEFONIA ou de INTERNET) aderidos por determinado cliente válido, que é requisitado como `parametro obrigatório` do método Construtor da classe.
+  ```php
+    <?php
+      ...
+      use Ispbox2\Enums\Contratos\Tipo;
+      ...
+      $contratos = new Contratos($cliente);
+      $contratos->Take(Tipo::Internet);
+  ```
+  ### ▷ Método `Take()`
+  
+  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  |---|---|---|---|---|
+  | `Tipo de contrato` | Enum | obrigatório | Identificador que indicara o tipo de contrato a ser solicitado podendo ser: | `Tipo::Internet` ou `Tipo::Telefonia` |
+  | `id` | mixed | opcional | Refere-se a um contrato especifico do cliente, com base no `Tipo de contrato` definido | Por padrão é 0 |
+
+  > **Note** O método `findOne()` é um método de busca que retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
+  > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
 ##  Projeto em Desenvolvimento 
 
 ## ❤️ Support 
