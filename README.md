@@ -57,7 +57,7 @@ $ composer require ispbox2/sdk:dev-master
         //Mensagem / Notificação / Ação
     ?>
   ```
-  ### Método `findOne()`
+  ### ▷ Método `findOne()`
   | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
   |---|---|---|---|---|
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
