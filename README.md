@@ -4,7 +4,7 @@
 [![Latest Unstable Version](http://poser.pugx.org/ispbox2/sdk/v/unstable)](https://packagist.org/packages/ispbox2/sdk)
 
 Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração aos recursos da API do Ispbox.
-Lembrando que esta SDK foi desenvolvida utilzando como base a API `[ispbox-ajax-requests]https://github.com/duoboxbr/ispbox-ajax-requests` API
+Lembrando que esta SDK foi desenvolvida utilzando como base a API [`ispbox-ajax-requests`](https://github.com/duoboxbr/ispbox-ajax-requests) API
 
 ## 💡 Requisitos
 
