@@ -48,7 +48,6 @@ class Boletos{
         }
 
         if($tboleto != null && $status == null){
-            $key   = $this->boletosLista[$tboleto->value];
             $saida = array_merge($key["Pago"], $key["Aberto"]);
             return $saida;
         }
@@ -60,7 +59,6 @@ class Boletos{
             return $saida;
         }
 
-        $key   = $this->boletosLista[$tboleto->value];
         $arr = $key[$status->name];
         return $arr; 
     }

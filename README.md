@@ -67,7 +67,7 @@ $ composer require ispbox2/sdk:dev-master
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
 
   ### Principais propriedades do objeto `Cliente`
-  #### Em caso de `PessoaFisica` as propriedades são:
+  #### Em caso de `Pessoa Física` as propriedades são:
   
   | Propriedade | Tipo  | Descrição |
   |---|---|---|
@@ -82,8 +82,27 @@ $ composer require ispbox2/sdk:dev-master
   | `Endereco` | object | Contém todos os dados de endereço do cadastro como, `logradouro`, `numero`, `bairro`, `cep`  e etc...|
   | `nomePai` | string | retorna nome do Pai |
   | `nomeMae` | string | retorna nome do Mãe |
+  | `profissao` | string | retorna profissão do cliente |
+  | `rg` | string | retorna a numerção do documento RG |
+  | `cpf` | string | retorna a numerção do documento CPF |
   
-
+  #### Em caso de `Pessoa Jurídica` as propriedades são:
+  
+  | Propriedade | Tipo  | Descrição |
+  |---|---|---|
+  | `id` | string | ID referente ao cadastro do cliente no sistema |
+  | `nomeFantasia` | string | retorna nome completo da empresa |
+  | `dataCadastro` | string | data em que foi cadastrado |
+  | `telefone` | string | contato de telefone |
+  | `celular` | string | contato de celular |
+  | `email` | string | email principal|
+  | `emailSecundario` | string | email secundario |
+  | `exists` | bool | retorna se o cadastro existe ou não |
+  | `Endereco` | object | Contém todos os dados de endereço do cadastro como, `logradouro`, `numero`, `bairro`, `cep`  e etc...|
+  | `responsavel` | string | retorna nome da pessoa responsável / proprietario(a) da empresa |
+  | `inscricaoEstadual` | string | retorna numeração da inscrição no estado |
+  | `cnpj` | string | retorna a numerção do documento CNPJ |
+  
 ##  Projeto em Desenvolvimento 
 
 ## ❤️ Support 
