@@ -149,7 +149,7 @@ $ composer require ispbox2/sdk:dev-master
         use Ispbox2\Enums\Contratos\Tipo;
         ...
         $contratos = new Contratos($cliente);
-        $contratos->Take(Tipo::Internet);
+        $contratos->TakeAny(35);
   ```
   > **Note** O método `TakeAny()` é um método de busca que retorna um objeto do tipo `Contrato` somente com base no `id` informado. 
 
