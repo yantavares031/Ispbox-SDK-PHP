@@ -22,8 +22,8 @@ Lembrando que esta SDK foi desenvolvida utilzando como base a API [`ispbox-ajax-
 - [Busca de Boletos](#-busca-de-boletos)
   - [Principais propriedades do objeto `Boleto`](#principais-propriedades-do-objeto-boleto)
   - [▷ Método `takeAll`](#-método-takeall)
-    - [Buscando todos os boletos do cliente por Tipo](#-buscando-todos-os-contratos-do-cliente-por-tipo-1)
-    - [Buscando todos os boletos do cliente por Status](#-buscando-todos-os-contratos-do-cliente-por-tipo-1)
+    - [Buscando todos os boletos do cliente por Tipo](#-buscando-todos-os-boletos-do-cliente-por-tipo)
+    - [Buscando todos os boletos do cliente por Status](#-buscando-todos-os-boletos-do-cliente-por-tipo)
 
 
 ## 💡 Requisitos
