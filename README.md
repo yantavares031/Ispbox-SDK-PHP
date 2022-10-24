@@ -234,6 +234,7 @@ $ composer require ispbox2/sdk:dev-master
       use Ispbox2\Clientes;
       use Ispbox2\Contratos;
       use Ispbox2\Enums\Clientes\Sidx;
+      use Ispbox2\Boletos;
 
       Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
 
@@ -248,14 +249,32 @@ $ composer require ispbox2/sdk:dev-master
   ```
   > **Note** A Classe `Boletos` é um objeto de busca que retora boletos (sejam eles de Mensalidades ou Avulsos) vinculado á um serviço do cliente, que é requisitado como `parametro obrigatório` do método Construtor da classe.
 
+  ### Principais propriedades do objeto `Boleto`
+  
+  | Propriedade | Tipo  | Descrição |
+  |---|---|---|
+  | `documentoId` | int | Id do boleto no sistema |
+  | `clienteId` | int | Id do cliente que contém o boleto |
+  | `contratoId` | int | Id do contrato que contém o boleto |
+  | `tipoContrato` | Enum | Tipo do contrato que contem o boleto (Internet ou Telefonia) |
+  | `descricao` | string | descrição do boleto |
+  | `vencimento` | string | vencimento do boleto |
+  | `dataGeracao` | enum | data de criação |
+  | `valor` | string | valor em formato de Real R$ (para fins de renderização |
+  | `valorFloat` | float | valor em formato de decimal (para fins de calculo) |
+  | `valorPago` | string | valor pago em formato de Real R$ (para fins de renderização) |
+  | `status` | enum | retorna se o boleto está pago ou aberto |
+  | `atrasado` | bool | retorna (true) se o boleto estiver em aberto e atrasado, e (false) para aberto e em dias |
+  | `dataPagamento` | string | data da liquidação |
+
   ### ▷ Método `takeAll()`
   ```php
       <?php
         ...
-        use Ispbox2\Enums\Contratos\Tipo;
+        use Ispbox2\Boletos;
         ...
-        $contratos = new Contratos($cliente);
-        $contratos->toList();
+        $boletos = new Boletos($contratoInternet);
+        $contratos->takeAll();
   ```
   > **Note** O método `takeAll()` é um método de busca que retorna um `array` contendo todos os `Boletos` do cliente 
 
