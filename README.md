@@ -38,7 +38,7 @@ Lembrando que esta SDK foi desenvolvida utilzando como base a API [`ispbox-ajax-
 
 2. No diretório raiz do seu projeto, execute em linha de comando
 ```
-$ composer require ispbox2/sdk:dev-master
+$ composer require ispbox2/sdk
 ```
 
 ✅ É isso! O SDK do Ispbox2 foi instalado com sucesso.
