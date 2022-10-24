@@ -6,6 +6,19 @@
 Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápida! reduzindo o tempo de integração aos recursos da API do Ispbox.
 Lembrando que esta SDK foi desenvolvida utilzando como base a API [`ispbox-ajax-requests`](https://github.com/duoboxbr/ispbox-ajax-requests) API
 
+## 🗒️ Sumário
+- [💻 Instalação](#-instalação)
+- [⚙️ Configurando SDK](#%EF%B8%8F-configurando-sdk)
+- [🔎 Busca de cliente](#-busca-de-cliente)
+  - [▷ Método `findOne`](#-método-findone)
+- [📝 Busca de contratos / Planos contratados](#-busca-de-contratos--planos-contratados)
+  - [▷ Método `Take`](#-método-take)
+  - [▷ Método `takeAny`](#-método-takeany)
+  - [▷ Método `toList`](#-método-tolist)
+    - [Buscando todos os contratos do cliente por Tipo](#-buscando-todos-os-contratos-do-cliente-por-tipo)
+    - [Buscando todos os contratos do cliente por Status](#-buscando-todos-os-contratos-do-cliente-por-status)
+
+
 ## 💡 Requisitos
 
 - PHP 7.4 ou superior
