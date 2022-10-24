@@ -7,11 +7,11 @@ Esta biblioteca prover aos desenvolvedores se comunicar de forma simples e rápi
 Lembrando que esta SDK foi desenvolvida utilzando como base a API [`ispbox-ajax-requests`](https://github.com/duoboxbr/ispbox-ajax-requests) API
 
 ## 🗒️ Sumário
-- [💻 Instalação](#-instalação)
-- [⚙️ Configurando SDK](#%EF%B8%8F-configurando-sdk)
-- [🔎 Busca de cliente](#-busca-de-cliente)
+- [Instalação](#-instalação)
+- [Configurando SDK](#%EF%B8%8F-configurando-sdk)
+- [Busca de cliente](#-busca-de-cliente)
   - [▷ Método `findOne`](#-método-findone)
-- [📝 Busca de contratos / Planos contratados](#-busca-de-contratos--planos-contratados)
+- [Busca de contratos / Planos contratados](#-busca-de-contratos--planos-contratados)
   - [▷ Método `Take`](#-método-take)
   - [▷ Método `takeAny`](#-método-takeany)
   - [▷ Método `toList`](#-método-tolist)
