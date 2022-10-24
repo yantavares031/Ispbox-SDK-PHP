@@ -212,6 +212,69 @@ $ composer require ispbox2/sdk:dev-master
         $contratos->toList(null, Tipo::ContratoSuspenso); // Retorna array com todos os contratos suspensos do cliente
         $contratos->toList(null, Tipo::SuspensoParcial); // Retorna array com todos os contratos suspensos parcialemnte do cliente
   ```
+  ## 💲 Busca de Boletos
+  ```php
+    <?php
+      require_once("vendor/autoload.php");
+      use Ispbox2\Clientes;
+      use Ispbox2\Contratos;
+      use Ispbox2\Enums\Clientes\Sidx;
+
+      Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
+
+      $cliente   = Clientes::findOne(Sidx::CPF, '61200456067');
+      if(!$cliente->exists)
+            //Messagem de erro caso o cliente não seja valido
+
+      $contratos = new Contratos($cliente);
+      $contratoInternet = $contratos->Take(Tipo::Internet);
+
+      $boletos = new Boletos($contratoInternet);
+  ```
+  > **Note** A Classe `Boletos` é um objeto de busca que retora boletos (sejam eles de Mensalidades ou Avulsos) vinculado á um serviço do cliente, que é requisitado como `parametro obrigatório` do método Construtor da classe.
+
+  ### ▷ Método `takeAll()`
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+        $contratos->toList();
+  ```
+  > **Note** O método `takeAll()` é um método de busca que retorna um `array` contendo todos os `Boletos` do cliente 
+
+  | Parâmetro | Tipo | Requisito | Descrição | Exemplo |
+  |---|---|---|---|---|
+  | `Tipo` | Enum | opcional | Refere-se ao tipo de contrato (INTERNET ou TELEFONIA) |  |
+  | `Status` | Enum | opcional | Refere-se ao status do do serviço |  |
+  
+  #### ▷ Buscando todos os contratos do cliente por Tipo
+  > **Note** Retorna array com todos os contratos sem distinção de status, apenas filtrando pelo tipo do contrato.
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+
+        $contratos->toList(Tipo::Internet); // Retorna array com todos os contratos de internet do cliente
+        $contratos->toList(Tipo::Telefonia); // Retorna array com todos os contratos de internet do cliente
+  ```
+  #### ▷ Buscando todos os contratos do cliente por Status
+  > **Note** Retorna array com todos os contratos sem distinção de tipo, apenas filtrando pelo status do contrato.
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+
+        $contratos->toList(null, Status::Liberado); // Retorna array com todos os contratos liberado do cliente
+        $contratos->toList(null, Tipo::Bloqueado); // Retorna array com todos os contratos Bloqueado do cliente
+        $contratos->toList(null, Tipo::ContratoSuspenso); // Retorna array com todos os contratos suspensos do cliente
+        $contratos->toList(null, Tipo::SuspensoParcial); // Retorna array com todos os contratos suspensos parcialemnte do cliente
+  ```
 
 ##  Projeto em Desenvolvimento 
 
