@@ -172,6 +172,33 @@ $ composer require ispbox2/sdk:dev-master
   |---|---|---|---|---|
   | `Tipo` | Enum | opcional | Refere-se ao tipo de contrato (INTERNET ou TELEFONIA) |  |
   | `Status` | Enum | opcional | Refere-se ao status do do serviço |  |
+  
+  #### Buscando todos os contratos do cliente por Tipo
+  > **Note** Retorna array com todos os contratos sem distinção de status, apenas filtrando pelo tipo do contrato.
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+
+        $contratos->toList(Tipo::Internet); // Retorna array com todos os contratos de internet do cliente
+        $contratos->toList(Tipo::Telefonia); // Retorna array com todos os contratos de internet do cliente
+  ```
+  #### Buscando todos os contratos do cliente por Status
+  > **Note** Retorna array com todos os contratos sem distinção de tipo, apenas filtrando pelo status do contrato.
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+
+        $contratos->toList(null, Status::Liberado); // Retorna array com todos os contratos liberado do cliente
+        $contratos->toList(null, Tipo::Bloqueado); // Retorna array com todos os contratos Bloqueado do cliente
+        $contratos->toList(null, Tipo::ContratoSuspenso); // Retorna array com todos os contratos suspensos do cliente
+        $contratos->toList(null, Tipo::SuspensoParcial); // Retorna array com todos os contratos suspensos parcialemnte do cliente
+  ```
 
 ##  Projeto em Desenvolvimento 
 
