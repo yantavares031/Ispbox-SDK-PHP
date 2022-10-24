@@ -142,6 +142,21 @@ $ composer require ispbox2/sdk:dev-master
   | `Tipo de contrato` | Enum | obrigatório | Identificador que indicara o tipo de contrato a ser solicitado podendo ser: | `Tipo::Internet` ou `Tipo::Telefonia` |
   | `id` | int | opcional | Refere-se a um contrato especifico do cliente, com base no `Tipo de contrato` definido | Por padrão é 0 |
 
+  ### ▷ Método `TakeAny()`
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+        $contratos->Take(Tipo::Internet);
+  ```
+  > **Note** O método `TakeAny()` é um método de busca que retora um objeto do tipo `Contrato` somente com base no `id` informado. 
+
+  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  |---|---|---|---|---|
+  | `id` | int | obrigatório | Refere-se a um contrato especifico do cliente |  |
+
 ##  Projeto em Desenvolvimento 
 
 ## ❤️ Support 
