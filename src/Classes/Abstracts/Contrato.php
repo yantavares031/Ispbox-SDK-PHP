@@ -26,7 +26,6 @@ abstract class Contrato{
         $this->clienteId       = $stdobj->cli_id;
         $this->plano           = $stdobj->plan_nome;
         $this->valor           = $stdobj->plan_valor;
-        $this->clienteId       = $stdobj->cli_id;
         $this->dataInstalacao  = $parseDate($stdobj->pl_data_instalacao);
         $this->planoStatus     = $parseStatus->name;
         $this->planoStatusEnum = $parseStatus;

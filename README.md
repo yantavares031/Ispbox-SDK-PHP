@@ -137,6 +137,19 @@ $ composer require ispbox2/sdk:dev-master
   ```
   > **Note** A Classe `Contratos` é um objeto de busca que retora contratos (sejam eles de TELEFONIA ou de INTERNET) aderidos por determinado cliente válido, que é requisitado como `parametro obrigatório` do método Construtor da classe. Para filtrar informações do contrato utilize os métodos em seguida....
 
+  ### Principais propriedades do objeto `Contrato`
+  
+  | Propriedade | Tipo  | Descrição |
+  |---|---|---|
+  | `id` | int | ID do contrato |
+  | `clienteId` | int | ID do cliente que contém o contrato |
+  | `plano` | string | Plano contratatado |
+  | `valor` | float | Valor mensal do contrato |
+  | `dataInstalacao` | string | data em que o serviço foi ativado |
+  | `planoStatus` | string | Status do plano... Liberado, bloqueado, susp..|
+  | `planoStatusEnum` | enum | Enum para comparação |
+  | `active` | bool | retorna se serviço está ativo (true), ou aguardando ativação (false) |
+
   ### ▷ Método `Take()`
   ```php
     <?php
