@@ -151,7 +151,7 @@ $ composer require ispbox2/sdk:dev-master
         $contratos = new Contratos($cliente);
         $contratos->Take(Tipo::Internet);
   ```
-  > **Note** O método `TakeAny()` é um método de busca que retora um objeto do tipo `Contrato` somente com base no `id` informado. 
+  > **Note** O método `TakeAny()` é um método de busca que retorna um objeto do tipo `Contrato` somente com base no `id` informado. 
 
   | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
   |---|---|---|---|---|
