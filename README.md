@@ -33,7 +33,7 @@ $ composer require ispbox2/sdk:dev-master
       Ispbox2\SDK::Configure(URL, USER, PASS);
     ?>
   ```
-  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo
+  | Parâmetro | Tipo | Requisito | Descrição | Exemplo
   |---|---|---|---|---|
   | `URL` | string | obrigatório | URL Base utilizado no seu ERP Ispbox | `https://demo.ispbox.com.br` |
   | `USER` | string | obrigatório | Login de conta ispbox | `admin` |
@@ -64,7 +64,7 @@ $ composer require ispbox2/sdk:dev-master
   > **Note** O método `findOne()` é um método estático de busca que retora um objeto do tipo `Cliente` se houver registros encontrados, caso contrario retorna um objeto `Cliente` vazio.
   > Para validar se a busca foi realizada com sucesso, utilize a propriedade `exists` em caso de `true` a busca obteve resultado!, para `false` a busca retornou vazia, logo o cliente não foi encontrado.
   
-  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  | Parâmetro | Tipo | Requisito | Descrição | Exemplo |
   |---|---|---|---|---|
   | `Sidx` | Enum | obrigatório | Chave de referencia, parâmetro que a SDK usará como filtro de busca, podendo ser variados tipos como: | `ID`, `CPF`, `CNPJ` |
   | `Valor` | mixed | obrigatório | Valor a ser buscado, com base na `Sidx` definida |  |
@@ -137,7 +137,7 @@ $ composer require ispbox2/sdk:dev-master
   > **Note** O método `Take()` é um método de busca que retora um objeto do tipo `Contrato` se houver registros encontrados, caso contrario retorna um objeto `Contrato` vazio.
   > O método `Take()` retorna somente um unico registro, por padrão se o segundo paramtro `id` não for passado... ele sempre retornara o primeiro contrato do cliente de acordo com o tipo escolhido. Porém caso queira retornar um contrato especifico é necessário passar o `id` do contrato como segundo parametro da função.
 
-  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  | Parâmetro | Tipo | Requisito | Descrição | Exemplo |
   |---|---|---|---|---|
   | `Tipo de contrato` | Enum | obrigatório | Identificador que indicara o tipo de contrato a ser solicitado podendo ser: | `Tipo::Internet` ou `Tipo::Telefonia` |
   | `id` | int | opcional | Refere-se a um contrato especifico do cliente, com base no `Tipo de contrato` definido | Por padrão é 0 |
@@ -153,7 +153,7 @@ $ composer require ispbox2/sdk:dev-master
   ```
   > **Note** O método `TakeAny()` é um método de busca que retorna um objeto do tipo `Contrato` somente com base no `id` informado. 
 
-  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  | Parâmetro | Tipo | Requisito | Descrição | Exemplo |
   |---|---|---|---|---|
   | `id` | int | obrigatório | Refere-se a ao id de contrato especifico do cliente |  |
 
@@ -168,10 +168,10 @@ $ composer require ispbox2/sdk:dev-master
   ```
   > **Note** O método `toList()` é um método de busca que retorna um `array` contendo todos os `Contratos` do cliente 
 
-  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  | Parâmetro | Tipo | Requisito | Descrição | Exemplo |
   |---|---|---|---|---|
-  | `Tipo` | Enum | opcional | Refere-se a ao id de contrato especifico do cliente |  |
-  | `Status` | Enum | opcional | Refere-se a ao id de contrato especifico do cliente |  |
+  | `Tipo` | Enum | opcional | Refere-se ao tipo de contrato (INTERNET ou TELEFONIA) |  |
+  | `Status` | Enum | opcional | Refere-se ao status do do serviço |  |
 
 ##  Projeto em Desenvolvimento 
 
