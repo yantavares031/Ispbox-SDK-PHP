@@ -51,7 +51,7 @@ class Contratos{
         return $contratos;
     }
 
-    public function Take(Tipo $tipo, $id=0) : Contrato{
+    public function Take(Tipo $tipo, int $id=0) : Contrato{
         foreach($this->contratoList as $list_id => $contrato){
             if($this->ShortClass($contrato) == $tipo->value){
                 
