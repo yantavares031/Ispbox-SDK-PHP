@@ -155,7 +155,7 @@ $ composer require ispbox2/sdk:dev-master
 
   | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
   |---|---|---|---|---|
-  | `id` | int | obrigatório | Refere-se a um contrato especifico do cliente |  |
+  | `id` | int | obrigatório | Refere-se a ao id de contrato especifico do cliente |  |
 
 ##  Projeto em Desenvolvimento 
 
