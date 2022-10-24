@@ -173,7 +173,7 @@ $ composer require ispbox2/sdk:dev-master
   | `Tipo` | Enum | opcional | Refere-se ao tipo de contrato (INTERNET ou TELEFONIA) |  |
   | `Status` | Enum | opcional | Refere-se ao status do do serviço |  |
   
-  #### Buscando todos os contratos do cliente por Tipo
+  #### ▷ Buscando todos os contratos do cliente por Tipo
   > **Note** Retorna array com todos os contratos sem distinção de status, apenas filtrando pelo tipo do contrato.
   ```php
       <?php
@@ -185,7 +185,7 @@ $ composer require ispbox2/sdk:dev-master
         $contratos->toList(Tipo::Internet); // Retorna array com todos os contratos de internet do cliente
         $contratos->toList(Tipo::Telefonia); // Retorna array com todos os contratos de internet do cliente
   ```
-  #### Buscando todos os contratos do cliente por Status
+  #### ▷ Buscando todos os contratos do cliente por Status
   > **Note** Retorna array com todos os contratos sem distinção de tipo, apenas filtrando pelo status do contrato.
   ```php
       <?php
