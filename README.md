@@ -157,6 +157,21 @@ $ composer require ispbox2/sdk:dev-master
   |---|---|---|---|---|
   | `id` | int | obrigatório | Refere-se a ao id de contrato especifico do cliente |  |
 
+  ### ▷ Método `toList()`
+  ```php
+      <?php
+        ...
+        use Ispbox2\Enums\Contratos\Tipo;
+        ...
+        $contratos = new Contratos($cliente);
+        $contratos->toList();
+  ```
+  > **Note** O método `toList()` é um método de busca que retorna um `array` contendo todos os `Contratos` do cliente 
+
+  | Parâmetro | Tipo | Obritoriedade | Descrição | Exemplo |
+  |---|---|---|---|---|
+  | `id` | int | obrigatório | Refere-se a ao id de contrato especifico do cliente |  |
+
 ##  Projeto em Desenvolvimento 
 
 ## ❤️ Support 
