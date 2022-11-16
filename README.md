@@ -50,7 +50,7 @@ $ composer require ispbox2/sdk
     <?php
       require_once("vendor/autoload.php");
       
-      Ispbox2\SDK::Configure(URL, USER, PASS);
+      Ispbox2\SDK::configure(URL, USER, PASS);
     ?>
   ```
   | Parâmetro | Tipo | Requisito | Descrição | Exemplo
@@ -71,7 +71,7 @@ $ composer require ispbox2/sdk
       use Ispbox2\Clientes;
       use Ispbox2\Enums\Clientes\Sidx;
 
-      Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
+      Ispbox2\SDK::configure('https://demo.ispbox.com.br','admin','password');
 
       $cliente = Clientes::findOne(Sidx::CPF, 61200456067);
       if($cliente->exists)
@@ -134,7 +134,7 @@ $ composer require ispbox2/sdk
       use Ispbox2\Contratos;
       use Ispbox2\Enums\Clientes\Sidx;
 
-      Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
+      Ispbox2\SDK::configure('https://demo.ispbox.com.br','admin','password');
 
       $cliente   = Clientes::findOne(Sidx::CPF, '61200456067');
       if(!$cliente->exists)
@@ -241,7 +241,7 @@ $ composer require ispbox2/sdk
       use Ispbox2\Enums\Clientes\Sidx;
       use Ispbox2\Boletos;
 
-      Ispbox2\SDK::Configure('https://demo.ispbox.com.br','admin','password');
+      Ispbox2\SDK::configure('https://demo.ispbox.com.br','admin','password');
 
       $cliente   = Clientes::findOne(Sidx::CPF, '61200456067');
       if(!$cliente->exists)

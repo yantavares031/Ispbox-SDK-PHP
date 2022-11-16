@@ -48,7 +48,7 @@ abstract class Boleto{
         if($this->status == DocStatus::Aberto)
         {
             $Rest     = new RestClient(SDK::$Host);
-            $Rest->setBasicAuth(SDK::AuthString());
+            $Rest->setBasicAuth(SDK::authString());
             $JsonRecibo = $Rest->Post('/clientes_cobrancas/liquidar',[
                 'id'                   => $this->documentoId,
                 'valor_pago'           => $this->valor,

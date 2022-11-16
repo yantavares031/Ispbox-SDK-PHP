@@ -1,4 +1,5 @@
 <?php
+
 namespace Ispbox2;
 
 use Exception;
@@ -7,28 +8,30 @@ use Ispbox2\Http\RestClient;
 
 class TestConnection
 {
-    public static function ValidateUrl(string $erp_url) : bool {
+    public static function validateUrl(string $erp_url): bool
+    {
         $retorno = false;
-        try{
+        try {
             file_get_contents($erp_url);
             $retorno = true;
-        }finally{
+        } finally {
             return $retorno;
         }
     }
 
-    public static function ValidateAuth(string $BaseUrl, Credentials $credenciais) : bool {
+    public static function validateAuth(string $BaseUrl, Credentials $credenciais): bool
+    {
         $retorno = false;
         $Rest = new RestClient($BaseUrl);
-        $result = $Rest->Post('/usuarios/login',[
+        $result = $Rest->Post('/usuarios/login', [
             "login"       => $credenciais->getUser(),
             "senha"       => $credenciais->getPassword(),
             "cmdweblogin" => "Acessar"
         ]);
-        if($result->erro == 0)
+        if ($result->erro == 0) {
             $retorno = true;
+        }
 
         return $retorno;
     }
 }
-

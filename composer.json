@@ -12,20 +12,23 @@
     "require": {
         "php" : ">=7.4"
     },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "3.*"
+    },
     "autoload": {
         "psr-4": {
             "Ispbox2\\": [
-                "src/",
-                "src/classes/",
-                "src/classes/Abstracts",
+                "src",
+                "src/Classes/",
+                "src/Classes/Abstracts",
                 "src/Configs/",
                 "src/Entity/",
                 "src/Entity/Cliente/",
                 "src/Entity/Contrato/",
                 "src/Entity/Financeiro/",
-                "src/Enums/clientes",
-                "src/Enums/contratos",
-                "src/Enums/financeiro",
+                "src/Enums/Clientes",
+                "src/Enums/Contratos",
+                "src/Enums/Financeiro",
                 "src/Enums/",
                 "src/Http/",
                 "src/Operation/"

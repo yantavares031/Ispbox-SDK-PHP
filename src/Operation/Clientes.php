@@ -14,7 +14,7 @@ class Clientes{
             throw new Exception("Formato de Sidx não permitido para este método",);
 
         $Rest = new RestClient(SDK::$Host);
-        $Rest->setBasicAuth(SDK::AuthString());
+        $Rest->setBasicAuth(SDK::authString());
         $response = $Rest->Post('/clientes/index?json',[
             'servico_internet'             => 1,
             $sidx->value                   => $value,

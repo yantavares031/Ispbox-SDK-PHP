@@ -5,7 +5,7 @@ namespace Ispbox2;
 use Ispbox2\Abstracts\Boleto;
 use Ispbox2\Classes\Json;
 
-class Fatura extends Boleto
+class BoletoAvulso extends Boleto
 {
     public string $referencia;
 
@@ -17,7 +17,6 @@ class Fatura extends Boleto
     public function fromObject($stdobj)
     {
         parent::fromObject($stdobj);
-        $parseDate = fn($date) => date('d/m/Y', strtotime($date));
-        $this->referencia = $parseDate($stdobj->referencia_mensalidade);
+        $this->referencia = $stdobj->referencia;
     }
 }

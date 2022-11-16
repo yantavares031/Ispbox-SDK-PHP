@@ -16,7 +16,7 @@ class Boletos{
             "Pago"   => [],
             "Aberto" => []
         ],
-        "BAvulso" => [
+        "BoletoAvulso" => [
             "Pago"   => [],
             "Aberto" => []
         ]
@@ -25,11 +25,11 @@ class Boletos{
     public function __construct(Contrato $contrato){
 
         $Mensalidades = $this->getMensalidades($contrato);
-        $BAvulsos     = $this->getBAvulsos($contrato);
-        $Merge        = array_merge($Mensalidades->rows, $BAvulsos->rows);
+        $BoletoAvulsos     = $this->getBoletoAvulsos($contrato);
+        $Merge        = array_merge($Mensalidades->rows, $BoletoAvulsos->rows);
 
         foreach($Merge as $key => $obj){
-            $boleto = ($obj->referencia_mensalidade != NULL) ? new Fatura() : new BAvulso();
+            $boleto = ($obj->referencia_mensalidade != NULL) ? new Fatura() : new BoletoAvulso();
             $boleto->fromObject($obj);
             $arrKeyName = $this->ShortClass($boleto);
 
@@ -42,7 +42,7 @@ class Boletos{
         
         if($tboleto == null && $status == null){
             $arrFatura = $this->boletosLista["Fatura"];
-            $arrAvulso = $this->boletosLista["BAvulso"];
+            $arrAvulso = $this->boletosLista["BoletoAvulso"];
             $saida = array_merge($arrFatura["Pago"], $arrFatura["Aberto"], $arrAvulso["Aberto"], $arrAvulso["Pago"]);
             return $saida;
         }
@@ -54,7 +54,7 @@ class Boletos{
         
         if($tboleto == null && $status != null){
             $arrFatura = $this->boletosLista["Fatura"];
-            $arrAvulso = $this->boletosLista["BAvulso"];
+            $arrAvulso = $this->boletosLista["BoletoAvulso"];
             $saida = array_merge($arrFatura[$status->name], $arrAvulso[$status->name]);
             return $saida;
         }
@@ -67,7 +67,7 @@ class Boletos{
         $this->verifyService($contrato);
 
         $Rest     = new RestClient(SDK::$Host);
-        $Rest->setBasicAuth(SDK::AuthString());
+        $Rest->setBasicAuth(SDK::authString());
         $Mensalidades = $Rest->Post('/clientes_cobrancas/pesquisa',[
             'origem_tipo' => $contrato->tipo,
             'status_tipo' => 'nao_cancelado',
@@ -82,11 +82,11 @@ class Boletos{
         return $Mensalidades;
     }
 
-    private function getBAvulsos(Contrato $contrato) : Json{
+    private function getBoletoAvulsos(Contrato $contrato) : Json{
         $this->verifyService($contrato);
         
         $Rest     = new RestClient(SDK::$Host);
-        $Rest->setBasicAuth(SDK::AuthString());
+        $Rest->setBasicAuth(SDK::authString());
         $Avulsos = $Rest->Post('/clientes_cobrancas/pesquisa',[
             'origem_tipo' => $contrato->tipo,
             'status_tipo' => 'nao_cancelado',

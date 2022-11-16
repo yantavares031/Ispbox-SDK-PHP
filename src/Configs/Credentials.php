@@ -21,7 +21,7 @@ class Credentials
         return ( !$InBase64 ) ? $value : base64_encode( $value );
     }
 
-    function toAuthString() {
+    function toauthString() {
         return base64_encode($this->getUser().':'.$this->getPassword());
     }
 }
