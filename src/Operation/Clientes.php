@@ -13,7 +13,7 @@ class Clientes{
         if($sidx != Sidx::ID and $sidx != Sidx::CNPJ and $sidx != Sidx::CPF)
             throw new Exception("Formato de Sidx não permitido para este método",);
 
-        $Rest = new RestClient(SDK::$Host);
+        $Rest = new RestClient(SDK::$host);
         $Rest->setBasicAuth(SDK::authString());
         $response = $Rest->Post('/clientes/index?json',[
             'servico_internet'             => 1,
