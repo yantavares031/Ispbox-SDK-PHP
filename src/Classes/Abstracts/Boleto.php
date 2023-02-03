@@ -47,7 +47,7 @@ abstract class Boleto{
     public function settle(string $dataPagamento){
         if($this->status == DocStatus::Aberto)
         {
-            $Rest     = new RestClient(SDK::$Host);
+            $Rest     = new RestClient(SDK::$host);
             $Rest->setBasicAuth(SDK::authString());
             $JsonRecibo = $Rest->Post('/clientes_cobrancas/liquidar',[
                 'id'                   => $this->documentoId,

@@ -66,7 +66,7 @@ class Boletos{
     private function getMensalidades(Contrato $contrato) : Json{
         $this->verifyService($contrato);
 
-        $Rest     = new RestClient(SDK::$Host);
+        $Rest     = new RestClient(SDK::$host);
         $Rest->setBasicAuth(SDK::authString());
         $Mensalidades = $Rest->Post('/clientes_cobrancas/pesquisa',[
             'origem_tipo' => $contrato->tipo,
@@ -85,7 +85,7 @@ class Boletos{
     private function getBoletoAvulsos(Contrato $contrato) : Json{
         $this->verifyService($contrato);
         
-        $Rest     = new RestClient(SDK::$Host);
+        $Rest     = new RestClient(SDK::$host);
         $Rest->setBasicAuth(SDK::authString());
         $Avulsos = $Rest->Post('/clientes_cobrancas/pesquisa',[
             'origem_tipo' => $contrato->tipo,
