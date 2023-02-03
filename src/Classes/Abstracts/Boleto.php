@@ -51,7 +51,7 @@ abstract class Boleto{
             $Rest->setBasicAuth(SDK::authString());
             $JsonRecibo = $Rest->Post('/clientes_cobrancas/liquidar',[
                 'id'                   => $this->documentoId,
-                'valor_pago'           => $this->valor,
+                'valor_pago'           => str_replace('R$ ','',$this->valor),
                 'data_pagamento'       => $this->dataPagamento,
                 'forma_recebimento_id' => 3,
                 'gerar_recibo'         => 0,

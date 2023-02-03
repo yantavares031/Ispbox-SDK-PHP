@@ -36,6 +36,5 @@ class PessoaFisica extends Cliente{
         $this->nomePai         = $stdobj->nome_pai;
         $this->nomeMae         = $stdobj->nome_mae;
         $this->profissao       = $stdobj->profissao;
-        
     }
 }
