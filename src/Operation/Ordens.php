@@ -16,7 +16,6 @@ class Ordens{
         var_dump($agendadas);
         exit();
 
-
         $naoAgendadas = $this->getNaoAgendadas();
         $Merge        = array_merge($agendadas, $naoAgendadas);
 
@@ -84,7 +83,7 @@ class Ordens{
 
         return $NAgendadas;
     }
-    
+
     // public function takeAll(DocTipo $tboleto=null, DocStatus $status=null) : array{
     //     $key = $this->boletosLista[$tboleto->value];
         
