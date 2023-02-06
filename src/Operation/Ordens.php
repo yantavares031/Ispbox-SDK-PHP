@@ -53,7 +53,7 @@ class Ordens{
             'condominios_id'    => ''
         ]);
 
-        return $Agendadas->rows;
+        return $Agendadas;
     }
 
     private function getNaoAgendadas() : Json{
