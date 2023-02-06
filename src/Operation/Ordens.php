@@ -12,11 +12,13 @@ class Ordens{
     public function __construct(){
 
         $agendadas    = $this->getAgendadas();
+
+        var_dump($agendadas);
+        exit();
+
+        
         $naoAgendadas = $this->getNaoAgendadas();
         $Merge        = array_merge($agendadas, $naoAgendadas);
-
-        var_dump($Merge);
-        exit();
 
         foreach($Merge as $key => $obj){
             $os = ($obj->referencia_mensalidade != NULL) ? new Fatura() : new BoletoAvulso();
