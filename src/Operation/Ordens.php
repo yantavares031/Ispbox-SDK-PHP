@@ -7,24 +7,23 @@ use Ispbox2\Http\RestClient;
 use Ispbox2\Classes\Abstracts\OS;
 
 class Ordens{
-    private array $ordens = [];
+    private array $ordens = [
+        "Agendadas"    => [],
+        "NaoAgendadas" => []
+    ];
 
     public function __construct(){
 
         $agendadas    = $this->getAgendadas();
-        echo "<pre>";
-        var_dump($agendadas);
-        exit();
-
         $naoAgendadas = $this->getNaoAgendadas();
-        $Merge        = array_merge($agendadas, $naoAgendadas);
+        $Merge        = array_merge($agendadas->rows, $naoAgendadas->rows);
 
         foreach($Merge as $key => $obj){
-            $os = ($obj->referencia_mensalidade != NULL) ? new Fatura() : new BoletoAvulso();
-            $os->fromObject($obj);
+            $cell = $obj->cell;
+            $os = (count($cell) == 14) ? new Agendadas() : new NaoAgendadas();
+            $os->fromObject($cell);
             $arrKeyName = $this->ShortClass($os);
-
-            array_push($this->ordens[$arrKeyName][$os->status->name], $os);
+            array_push($this->ordens[$arrKeyName], $os);
         }
     }
 
@@ -37,7 +36,7 @@ class Ordens{
             'page'              => 1,
             'sidx'              => 'data',
             'sord'              => 'desc',
-            'agendadas'         => 1,
+            'agendada'         => 1,
             'numero_os'         => '',
             'data_inicial'      => '01/01/2022',
             'data_final'        => '31/12/2023',
@@ -65,7 +64,7 @@ class Ordens{
             'page'              => 1,
             'sidx'              => 'data',
             'sord'              => 'desc',
-            'agendadas'         => 0,
+            'agendada'         => 0,
             'numero_os'         => '',
             'data_inicial'      => '01/01/2022',
             'data_final'        => '31/12/2023',
@@ -84,34 +83,12 @@ class Ordens{
         return $NAgendadas;
     }
 
-    // public function takeAll(DocTipo $tboleto=null, DocStatus $status=null) : array{
-    //     $key = $this->boletosLista[$tboleto->value];
-        
-    //     if($tboleto == null && $status == null){
-    //         $arrFatura = $this->boletosLista["Fatura"];
-    //         $arrAvulso = $this->boletosLista["BoletoAvulso"];
-    //         $saida = array_merge($arrFatura["Pago"], $arrFatura["Aberto"], $arrAvulso["Aberto"], $arrAvulso["Pago"]);
-    //         return $saida;
-    //     }
-
-    //     if($tboleto != null && $status == null){
-    //         $saida = array_merge($key["Pago"], $key["Aberto"]);
-    //         return $saida;
-    //     }
-        
-    //     if($tboleto == null && $status != null){
-    //         $arrFatura = $this->boletosLista["Fatura"];
-    //         $arrAvulso = $this->boletosLista["BoletoAvulso"];
-    //         $saida = array_merge($arrFatura[$status->name], $arrAvulso[$status->name]);
-    //         return $saida;
-    //     }
-
-    //     $arr = $key[$status->name];
-    //     return $arr; 
-    // }
+    public function takeAll() : array{
+        return $this->ordens; 
+    }
 
     private function ShortClass($class) : string{
-        $arrClass = explode('\\',get_class($class));
+        $arrClass = explode('\\',get_class($class)); 
         return $arrClass[count($arrClass)-1];
     }
 }
