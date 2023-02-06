@@ -12,11 +12,11 @@ class Ordens{
     public function __construct(){
 
         $agendadas    = $this->getAgendadas();
-
+        echo "<pre>";
         var_dump($agendadas);
         exit();
 
-        
+
         $naoAgendadas = $this->getNaoAgendadas();
         $Merge        = array_merge($agendadas, $naoAgendadas);
 
@@ -54,7 +54,7 @@ class Ordens{
             'condominios_id'    => ''
         ]);
 
-        return $Agendadas;
+        return $Agendadas->rows;
     }
 
     private function getNaoAgendadas() : Json{
@@ -84,6 +84,7 @@ class Ordens{
 
         return $NAgendadas;
     }
+    
     // public function takeAll(DocTipo $tboleto=null, DocStatus $status=null) : array{
     //     $key = $this->boletosLista[$tboleto->value];
         
