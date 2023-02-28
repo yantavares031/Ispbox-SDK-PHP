@@ -34,7 +34,7 @@ abstract class OS{
     function splitAbertFechamento($text){
         $sprtd = explode('<br />', $text);
         $abertura = $sprtd[0];
-        $fechamento = (isset($sprtd[1])) ? explode(': ',$sprtd[1])[1] : '';
+        $fechamento = (isset($sprtd[1]) && $sprtd[1] != 'Executada') ? explode(': ',$sprtd[1])[1] : '';
         return [$abertura, $fechamento];
     }
     
