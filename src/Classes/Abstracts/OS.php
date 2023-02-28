@@ -36,7 +36,7 @@ abstract class OS{
         $abertura = $sprtd[0];
         $fechamento = explode(': ',$sprtd[1])[1];
 
-        return [$abertura, $fechamento];
+        return $sprtd;
     }
     
 }
