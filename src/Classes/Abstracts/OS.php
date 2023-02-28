@@ -32,6 +32,11 @@ abstract class OS{
         $this->endereco->cidade    = $stdobj[4];
     }
     function splitAbertFechamento($text){
-        return explode('<br />Fechada: ', $text);
+        $sprtd = explode('<br />', $text);
+        $abertura = $sprtd[0];
+        $fechamento = explode(': ',$sprtd[1])[1];
+
+        return [$abertura, $fechamento];
     }
+    
 }
