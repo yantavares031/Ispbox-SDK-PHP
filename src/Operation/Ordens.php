@@ -7,10 +7,7 @@ use Ispbox2\Http\RestClient;
 use Ispbox2\Classes\Abstracts\OS;
 
 class Ordens{
-    private array $ordens = [
-        "Agendadas"    => [],
-        "NaoAgendadas" => []
-    ];
+    private array $ordens = [];
 
     public function __construct(){
 
@@ -22,8 +19,7 @@ class Ordens{
             $cell = $obj->cell;
             $os = (count($cell) == 14) ? new Agendadas() : new NaoAgendadas();
             $os->fromObject($cell);
-            $arrKeyName = $this->ShortClass($os);
-            array_push($this->ordens[$arrKeyName], $os);
+            array_push($this->ordens, $os);
         }
     }
 
