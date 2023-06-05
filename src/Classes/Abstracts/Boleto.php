@@ -21,6 +21,7 @@ abstract class Boleto{
     public Tipo      $tipoContrato;
     public DocStatus $status;
     public bool      $atrasado;
+    public string    $nosso_numero;
 
     public function __construct(){
 
@@ -42,6 +43,7 @@ abstract class Boleto{
         $this->status        = DocStatus::from($stdobj->status);
         $this->atrasado      = ($stdobj->vencido == 0) ? false : true;
         $this->dataPagamento = ($this->status == DocStatus::Pago) ? $parseDate($stdobj->data_pagamento) : '';
+        $this->nosso_numero = $stdobj->numero_documento;
     }
 
     public function settle(string $dataPagamento){
